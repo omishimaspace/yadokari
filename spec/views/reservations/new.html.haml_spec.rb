@@ -7,8 +7,8 @@ RSpec.describe "reservations/new", type: :view do
       :email => "MyString",
       :tel => "MyString",
       :check_in_time => "MyString",
-      :mens_number => 1,
-      :womens_number => 1,
+      :men_number => 1,
+      :women_number => 1,
       :purpose_of_use => "MyString",
       :payment_method => "MyString",
       :coupon => "MyString",
@@ -31,9 +31,9 @@ RSpec.describe "reservations/new", type: :view do
 
       assert_select "input[name=?]", "reservation[check_in_time]"
 
-      assert_select "input[name=?]", "reservation[mens_number]"
+      assert_select "input[name=?]", "reservation[men_number]"
 
-      assert_select "input[name=?]", "reservation[womens_number]"
+      assert_select "input[name=?]", "reservation[women_number]"
 
       assert_select "input[name=?]", "reservation[purpose_of_use]"
 

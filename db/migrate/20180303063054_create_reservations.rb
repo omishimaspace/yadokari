@@ -9,8 +9,8 @@ class CreateReservations < ActiveRecord::Migration[5.1]
       t.date :check_in_on
       t.date :check_out_on
       t.string :check_in_time
-      t.integer :mens_number
-      t.integer :womens_number
+      t.integer :men_number, default: 0, null: false
+      t.integer :women_number, default: 0, null: false
       t.string :purpose_of_use
       t.string :payment_method
       t.string :coupon

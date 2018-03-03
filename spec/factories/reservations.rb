@@ -6,8 +6,8 @@ FactoryGirl.define do
     check_in_on "2018-03-03"
     check_out_on "2018-03-03"
     check_in_time "MyString"
-    mens_number 1
-    womens_number 1
+    men_number 1
+    women_number 1
     purpose_of_use "MyString"
     payment_method "MyString"
     coupon "MyString"
