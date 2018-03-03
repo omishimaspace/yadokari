@@ -4,10 +4,10 @@ class CreateSchedules < ActiveRecord::Migration[5.1]
       t.integer :reservation_id
       t.string :schedule_type
       t.text :note
-      t.date :started_at
-      t.date :finished_at
+      t.date :started_on
+      t.date :finished_on
       t.timestamps
     end
-    add_index :schedules, :started_at
+    add_index :schedules, :started_on
   end
 end

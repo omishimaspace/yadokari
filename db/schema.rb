@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20180303212313) do
     t.date "check_in_on"
     t.date "check_out_on"
     t.string "check_in_time"
-    t.integer "men_number"
-    t.integer "women_number"
+    t.integer "men_number", default: 0, null: false
+    t.integer "women_number", default: 0, null: false
     t.string "purpose_of_use"
     t.string "payment_method"
     t.string "coupon"
@@ -50,11 +50,11 @@ ActiveRecord::Schema.define(version: 20180303212313) do
     t.integer "reservation_id"
     t.string "schedule_type"
     t.text "note"
-    t.date "started_at"
-    t.date "finished_at"
+    t.date "started_on"
+    t.date "finished_on"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["started_at"], name: "index_schedules_on_started_at"
+    t.index ["started_on"], name: "index_schedules_on_started_on"
   end
 
   create_table "yados", force: :cascade do |t|

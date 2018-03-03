@@ -5,6 +5,6 @@ class Schedule < ApplicationRecord
   validates :schedule_type, inclusion: {in: Schedule.schedule_types.keys}
 
   def to_cal
-    {started_at: self.started_at, finished_at: self.finished_at, schedule: self.schedule_type_i18n}
+    {started_on: self.started_on, finished_on: self.finished_on, schedule: self.schedule_type_i18n}
   end
 end
