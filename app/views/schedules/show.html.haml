@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Reservation:
+  = @schedule.reservation_id
+%p
+  %b Schedule type:
+  = @schedule.schedule_type
+%p
+  %b Started at:
+  = @schedule.started_at
+%p
+  %b Finished at:
+  = @schedule.finished_at
+
+= link_to 'Edit', edit_schedule_path(@schedule)
+\|
+= link_to 'Back', schedules_path

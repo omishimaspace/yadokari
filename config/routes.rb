@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :yados do
         resources :rooms
         resources :reservations
+        resources :schedules
       end
     end
   end
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
   resources :reservations
   resources :rooms
   resources :yados
+  resources :schedules
 end

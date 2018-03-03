@@ -37,7 +37,7 @@ gem 'haml-rails'
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
-
+gem 'enum_help'
 
 gem 'aasm'
 gem 'default_value_for', '~> 3.0.0'
