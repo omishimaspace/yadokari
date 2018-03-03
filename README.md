@@ -1,5 +1,5 @@
 # yadokari
-
+    
 ## Command Line Tool Usage
 
 * 宿の一覧表示
