@@ -3,9 +3,11 @@ class Api::V1::ReservationsController < Api::BaseController
 
   def create
     @reservation = @yado.reservations.new(reservation_params)
-    render json: @reservation.token, status: :created
-  else
-    render json: @reservation.errors, status: :unprocessable_entity
+    if @reservation.save
+      render json: {token: @reservation.token}, status: :created
+    else
+      render json: @reservation.errors, status: :bad_request
+    end
   end
 
 
@@ -33,7 +35,7 @@ class Api::V1::ReservationsController < Api::BaseController
   private
 
   def set_yado
-    @yado = Yado.find(params[:id])
+    @yado = Yado.find(params[:yado_id])
   end
 
   def reservation_params
