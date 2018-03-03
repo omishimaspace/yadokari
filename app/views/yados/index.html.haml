@@ -1,0 +1,23 @@
+%h1 Listing yados
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Short name
+      %th
+      %th
+      %th
+
+  %tbody
+    - @yados.each do |yado|
+      %tr
+        %td= yado.name
+        %td= yado.short_name
+        %td= link_to 'Show', yado
+        %td= link_to 'Edit', edit_yado_path(yado)
+        %td= link_to 'Destroy', yado, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Yado', new_yado_path

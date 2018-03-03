@@ -1,0 +1,16 @@
+= form_for @yado do |f|
+  - if @yado.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@yado.errors.count, "error")} prohibited this yado from being saved:"
+      %ul
+        - @yado.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :short_name
+    = f.text_field :short_name
+  .actions
+    = f.submit 'Save'

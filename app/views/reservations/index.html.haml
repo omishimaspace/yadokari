@@ -1,0 +1,47 @@
+%h1 Listing reservations
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Email
+      %th Tel
+      %th Check in on
+      %th Check out on
+      %th Check in at
+      %th Mens number
+      %th Womens number
+      %th Purpose of use
+      %th Payment method
+      %th Coupon
+      %th Note
+      %th Status
+      %th Token
+      %th
+      %th
+      %th
+
+  %tbody
+    - @reservations.each do |reservation|
+      %tr
+        %td= reservation.name
+        %td= reservation.email
+        %td= reservation.tel
+        %td= reservation.check_in_on
+        %td= reservation.check_out_on
+        %td= reservation.check_in_time
+        %td= reservation.mens_number
+        %td= reservation.womens_number
+        %td= reservation.purpose_of_use
+        %td= reservation.payment_method
+        %td= reservation.coupon
+        %td= reservation.note
+        %td= reservation.status
+        %td= reservation.token
+        %td= link_to 'Show', reservation
+        %td= link_to 'Edit', edit_reservation_path(reservation)
+        %td= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Reservation', new_reservation_path

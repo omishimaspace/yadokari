@@ -1,0 +1,48 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @reservation.name
+%p
+  %b Email:
+  = @reservation.email
+%p
+  %b Tel:
+  = @reservation.tel
+%p
+  %b Check in on:
+  = @reservation.check_in_on
+%p
+  %b Check out on:
+  = @reservation.check_out_on
+%p
+  %b Check in at:
+  = @reservation.check_in_time
+%p
+  %b Mens number:
+  = @reservation.mens_number
+%p
+  %b Womens number:
+  = @reservation.womens_number
+%p
+  %b Purpose of use:
+  = @reservation.purpose_of_use
+%p
+  %b Payment method:
+  = @reservation.payment_method
+%p
+  %b Coupon:
+  = @reservation.coupon
+%p
+  %b Note:
+  = @reservation.note
+%p
+  %b Status:
+  = @reservation.status
+%p
+  %b Token:
+  = @reservation.token
+
+= link_to 'Edit', edit_reservation_path(@reservation)
+\|
+= link_to 'Back', reservations_path

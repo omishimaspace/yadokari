@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @yado.name
+%p
+  %b Short name:
+  = @yado.short_name
+
+= link_to 'Edit', edit_yado_path(@yado)
+\|
+= link_to 'Back', yados_path
