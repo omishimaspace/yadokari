@@ -1,5 +1,10 @@
 class Api::V1::ReservationsController < Api::BaseController
-  before_action :set_yado
+  before_action :set_yado, except: :show
+
+  def show
+    @reservation = Reservation.find_by(token: params[:token])
+    render json: @reservation
+  end
 
   def create
     @reservation = @yado.reservations.new(reservation_params)
@@ -9,7 +14,6 @@ class Api::V1::ReservationsController < Api::BaseController
       render json: @reservation.errors, status: :bad_request
     end
   end
-
 
   def update
     @reservation = Reservation.find(params[:id])
