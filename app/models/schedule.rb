@@ -4,7 +4,7 @@ class Schedule < ApplicationRecord
   validates :started_on, :finished_on, :schedule_type, presence: true
   validates :schedule_type, inclusion: {in: Schedule.schedule_types.keys}
 
-  scope :future, -> {where('started_on >= ?', Date.current)}
+  scope :future, -> {where('finished_on >= ?', Date.current)}
 
   def to_cal
     {started_on: self.started_on, finished_on: self.finished_on, schedule: self.schedule_type_i18n}
