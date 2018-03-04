@@ -1,47 +1,40 @@
-%h1 Listing reservations
-
-%table
+- model_class = Reservation
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
   %thead
     %tr
-      %th Name
-      %th Email
-      %th Tel
-      %th Check in on
-      %th Check out on
-      %th Check in at
-      %th Mens number
-      %th Womens number
-      %th Purpose of use
-      %th Payment method
-      %th Coupon
-      %th Note
-      %th Status
-      %th Token
-      %th
-      %th
-      %th
-
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:yado_id)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:email)
+      %th= model_class.human_attribute_name(:check_in_on)
+      %th= model_class.human_attribute_name(:check_out_on)
+      %th= model_class.human_attribute_name(:check_in_time)
+      %th 男/女
+      %th= model_class.human_attribute_name(:purpose_of_use)
+      %th= model_class.human_attribute_name(:note)
+      %th= model_class.human_attribute_name(:status)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @reservations.each do |reservation|
       %tr
+        %td= link_to reservation.id, reservation_path(reservation)
+        %td= reservation.yado.try(:name)
         %td= reservation.name
         %td= reservation.email
-        %td= reservation.tel
         %td= reservation.check_in_on
         %td= reservation.check_out_on
         %td= reservation.check_in_time
-        %td= reservation.men_number
-        %td= reservation.women_number
+        %td= "#{reservation.men_number}/#{reservation.women_number}"
         %td= reservation.purpose_of_use
-        %td= reservation.payment_method
-        %td= reservation.coupon
         %td= reservation.note
         %td= reservation.status
-        %td= reservation.token
-        %td= link_to 'Show', reservation
-        %td= link_to 'Edit', edit_reservation_path(reservation)
-        %td= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' }
+        %td=l reservation.created_at
+        %td
+          = link_to t('.show', :default => t("helpers.links.show")), reservation_path(reservation), :class => 'btn btn-default btn-xs'
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_reservation_path(reservation), :class => 'btn btn-default btn-xs'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), reservation_path(reservation), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
 
-%br
-
-= link_to 'New Reservation', new_reservation_path
+= link_to t('.new', :default => t("helpers.links.new")), new_reservation_path, :class => 'btn btn-primary'

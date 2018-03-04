@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :yado do
     name "MyString"
     short_name "MyString"

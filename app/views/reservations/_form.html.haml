@@ -1,52 +1,85 @@
-= form_for @reservation do |f|
-  - if @reservation.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@reservation.errors.count, "error")} prohibited this reservation from being saved:"
-      %ul
-        - @reservation.errors.full_messages.each do |message|
-          %li= message
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :tel
-    = f.text_field :tel
-  .field
-    = f.label :check_in_on
-    = f.date_select :check_in_on
-  .field
-    = f.label :check_out_on
-    = f.date_select :check_out_on
-  .field
-    = f.label :check_in_time
-    = f.text_field :check_in_time
-  .field
-    = f.label :men_number
-    = f.number_field :men_number
-  .field
-    = f.label :women_number
-    = f.number_field :women_number
-  .field
-    = f.label :purpose_of_use
-    = f.text_field :purpose_of_use
-  .field
-    = f.label :payment_method
-    = f.text_field :payment_method
-  .field
-    = f.label :coupon
-    = f.text_field :coupon
-  .field
-    = f.label :note
-    = f.text_field :note
-  .field
-    = f.label :status
-    = f.text_field :status
-  .field
-    = f.label :token
-    = f.text_field :token
-  .actions
-    = f.submit 'Save'
+= form_for @reservation, html: { class: "form form-horizontal reservation" } do |f|
+  .form-group
+    = f.label :yado_id, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :yado_id, class: 'form-control', required: true
+    = f.error_span(:yado_id)
+  .form-group
+    = f.label :room_id, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :room_id, class: 'form-control', required: true
+    = f.error_span(:room_id)
+  .form-group
+    = f.label :name, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :name, class: 'form-control', required: true
+    = f.error_span(:name)
+  .form-group
+    = f.label :email, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :email, class: 'form-control', required: true
+    = f.error_span(:email)
+  .form-group
+    = f.label :tel, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :tel, class: 'form-control', required: true
+    = f.error_span(:tel)
+  .form-group
+    = f.label :check_in_on, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :check_in_on, class: 'form-control', required: true
+    = f.error_span(:check_in_on)
+  .form-group
+    = f.label :check_out_on, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :check_out_on, class: 'form-control', required: true
+    = f.error_span(:check_out_on)
+  .form-group
+    = f.label :check_in_time, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :check_in_time, class: 'form-control', required: true
+    = f.error_span(:check_in_time)
+  .form-group
+    = f.label :men_number, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :men_number, class: 'form-control', required: true
+    = f.error_span(:men_number)
+  .form-group
+    = f.label :women_number, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :women_number, class: 'form-control', required: true
+    = f.error_span(:women_number)
+  .form-group
+    = f.label :purpose_of_use, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :purpose_of_use, class: 'form-control', required: true
+    = f.error_span(:purpose_of_use)
+  .form-group
+    = f.label :payment_method, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :payment_method, class: 'form-control', required: true
+    = f.error_span(:payment_method)
+  .form-group
+    = f.label :coupon, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :coupon, class: 'form-control', required: true
+    = f.error_span(:coupon)
+  .form-group
+    = f.label :note, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :note, class: 'form-control', required: true
+    = f.error_span(:note)
+  .form-group
+    = f.label :status, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :status, class: 'form-control', required: true
+    = f.error_span(:status)
+  .form-group
+    = f.label :token, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :token, class: 'form-control', required: true
+    = f.error_span(:token)
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = f.submit nil,class: 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), reservations_path, :class => 'btn btn-default'

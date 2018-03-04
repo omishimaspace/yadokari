@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :schedule do
     reservation_id 1
     schedule_type "MyString"
