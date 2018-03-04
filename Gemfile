@@ -37,9 +37,10 @@ gem 'haml-rails'
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
-gem 'enum_help'
 
 gem 'aasm'
+gem 'enum_help'
+gem 'letter_opener_web', '~> 1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

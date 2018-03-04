@@ -1,28 +1,20 @@
 class YadosController < ApplicationController
   before_action :set_yado, only: [:show, :edit, :update, :destroy]
 
-  # GET /yados
-  # GET /yados.json
   def index
     @yados = Yado.all
   end
 
-  # GET /yados/1
-  # GET /yados/1.json
   def show
   end
 
-  # GET /yados/new
   def new
     @yado = Yado.new
   end
 
-  # GET /yados/1/edit
   def edit
   end
 
-  # POST /yados
-  # POST /yados.json
   def create
     @yado = Yado.new(yado_params)
 
@@ -37,8 +29,6 @@ class YadosController < ApplicationController
     end
   end
 
-  # PATCH/PUT /yados/1
-  # PATCH/PUT /yados/1.json
   def update
     respond_to do |format|
       if @yado.update(yado_params)
@@ -51,8 +41,6 @@ class YadosController < ApplicationController
     end
   end
 
-  # DELETE /yados/1
-  # DELETE /yados/1.json
   def destroy
     @yado.destroy
     respond_to do |format|

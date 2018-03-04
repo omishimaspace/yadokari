@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   resources :rooms
   resources :yados
   resources :schedules
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

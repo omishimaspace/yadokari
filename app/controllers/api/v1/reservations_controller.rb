@@ -11,29 +11,30 @@ class Api::V1::ReservationsController < Api::BaseController
   end
 
   def create
-    @reservation = @yado.reservations.new(reservation_params)
-    if @reservation.save
-      render json: {token: @reservation.token}, status: :created
+    reservation = @yado.reservations.new(reservation_params)
+    if reservation.save
+      UserMailer.reservation(reservation).deliver_now
+      render json: {token: reservation.token}, status: :created
     else
-      render json: @reservation.errors, status: :bad_request
+      render json: reservation.errors, status: :bad_request
     end
   end
 
   def update
-    @reservation = Reservation.find(params[:id])
+    reservation = Reservation.find(params[:id])
     respond_to do |format|
-      if @reservation.update(reservation_params)
-        format.html {redirect_to @reservation, notice: 'Reservation was successfully updated.'}
-        format.json {render :show, status: :ok, location: @reservation}
+      if reservation.update(reservation_params)
+        format.html {redirect_to reservation, notice: 'Reservation was successfully updated.'}
+        format.json {render :show, status: :ok, location: reservation}
       else
         format.html {render :edit}
-        format.json {render json: @reservation.errors, status: :unprocessable_entity}
+        format.json {render json: reservation.errors, status: :unprocessable_entity}
       end
     end
   end
 
   def destroy
-    @reservation.destroy
+    reservation.destroy
     respond_to do |format|
       format.html {redirect_to reservations_url, notice: 'Reservation was successfully destroyed.'}
       format.json {head :no_content}
