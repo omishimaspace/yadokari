@@ -20,61 +20,68 @@ https://omishima-space.com/
 
 ```sh
 $ yadokari cal omishima-space
-      3月 2018
-日 月 火 水 木 金 土
-             1  2  3
- 4  5  6  7  8  9 10
-11 12 13 14 15 16 17
-18 19 20 21 22 23 24
-25 26 27 28 29 30 31
+Holiday: 2018-03-03 - 2018-03-04
+Reserved: 2018-03-12 - 2018-03-15
 ```
 
 * 宿の予約
 
 ```sh
 $ yadokari reserve omishima-space
-check in date: 2018/07/07
-check out date: 2018/07/08
 your name: mishima
 email address: mishima@example.com
-how many people: 5
+tel number: 09012345678
+check in date: 2018/01/01
+check out date: 2018/01/02
+check in time: 15:00
+number of men: 2
+number of women: 2
+purpose of use [開発合宿]: ハッカソン！
+method of payment [現金支払い]:
+coupon code [無し]:
+note [無し]:
 
-*** YOUR INFOMATION ***
-1. check in date: 2018/07/07
-2. check out date: 2018/07/08
-3. your name: mishima
-4. email address: mishima@example.com
-5. how many people: 5
-**********************
+*** YOUR INFORMATION ***
+0. your name: mishima
+1. email address: mishima@example.com
+2. tel number: 09012345678
+3. check in date: 2018/01/01
+4. check out date: 2018/01/02
+5. check in time: 15:00
+6. number of men: 2
+7. number of women: 2
+8. purpose of use: ハッカソン！
+9. method of payment: 現金支払い
+10. coupon code: 無し
+11. note: 無し
+************************
 
-confirm(Y/y) or edit(1-5): 2
-check out date: 2018/07/09
-
-*** YOUR INFOMATION ***
-1. check in date: 2018/07/07
-2. check out date: 2018/07/09
-3. your name: mishima
-4. email address: mishima@example.com
-5. how many people: 5
-**********************
-
-confirm(y) or edit(1-5): y
+confirm(Y/y) or edit(0-11): y
+{"token":"32daa984-4254-42d7-9ba5-ea7566002aa6"}
 done!!
-
-*** YOUR TOKEN ***
-jfkdjakfjdkfjkdjk
-******************
 ```
 
 * 自分の予約情報を確認
 
 ```sh
-$ yadokari me jfkdjakfjdkfjkdjk
-*** YOUR INFOMATION ***
-1. check in date: 2018/07/07
-2. check out date: 2018/07/09
-3. your name: mishima
-4. email address: mishima@example.com
-5. how many people: 5
-**********************
+$ yadokari me e4ff7fe9-945f-4a7e-af0d-9f1a67726627
+{'check_in_on': '2018-01-01',
+ 'check_in_time': '15:00',
+ 'check_out_on': '2018-01-02',
+ 'coupon': '無し',
+ 'created_at': '2018-03-04T01:39:10.898Z',
+ 'email': 'tanaka@example.com',
+ 'id': 12,
+ 'men_number': 3,
+ 'name': 'tanaka',
+ 'note': '無し',
+ 'payment_method': '現金支払い',
+ 'purpose_of_use': '開発合宿',
+ 'room_id': None,
+ 'status': None,
+ 'tel': '09012345678',
+ 'token': 'e4ff7fe9-945f-4a7e-af0d-9f1a67726627',
+ 'updated_at': '2018-03-04T01:39:10.898Z',
+ 'women_number': 3,
+ 'yado_id': 1}
 ```
