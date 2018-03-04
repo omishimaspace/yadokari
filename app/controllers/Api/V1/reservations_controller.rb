@@ -2,8 +2,12 @@ class Api::V1::ReservationsController < Api::BaseController
   before_action :set_yado, except: :show
 
   def show
-    @reservation = Reservation.find_by(token: params[:token])
-    render json: @reservation
+    reservation = Reservation.find_by(token: params[:token])
+    if reservation.present?
+      render json: reservation
+    else
+      render json: '', status: :not_found
+    end
   end
 
   def create
