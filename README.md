@@ -3,28 +3,33 @@
 yadokariとは、コンソールから宿を予約するプロジェクトです。
 現在、以下の言語に対応しております。
 
+* Ruby
+    * created by [@nof](https://github.com/omishimaspace/yadokari.rb)
+* Python
+    * created by [@rhoboro](https://github.com/omishimaspace/yadokari.py)
+* Node.js
+    * created by [@hayashiki](https://github.com/omishimaspace/yadokari.js)
+    
+このシステムは、2018/03/03に[オオミシマスペース](https://omishima-space.com)で開催された、ハッカソンで4人のエンジニアが作りました。
 ## Installation
 
 ### Ruby
 ```sh
 $ gem install yadokari
 ```
-created by [@nof](https://github.com/omishimaspace/yadokari.rb)
+
 
 ### Python
 ```sh
 # python3.5 or higher
 $ pip3 install yadokari
 ```
-created by [@rhoboro](https://github.com/omishimaspace/yadokari.py)
+
 
 ### Node.js
 ```sh
 $ npm install -g yadokari
 ```
-created by [@hayashiki](https://github.com/omishimaspace/yadokari.js)
-
-このシステムは、2018/03/03に[オオミシマスペース](https://omishima-space.com)で開催された、ハッカソンで4人のエンジニアが作りました。
 
 
 ## Command Line Tool Usage
