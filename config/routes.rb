@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   namespace :api do
     namespace :v1 do
@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   resources :yados
   resources :schedules
 
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end

@@ -37,6 +37,8 @@ gem 'haml-rails'
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+gem 'rails_admin'
+
 
 gem 'aasm'
 gem 'enum_help'

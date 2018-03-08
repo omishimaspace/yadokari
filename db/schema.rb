@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20180308020030) do
   end
 
   create_table "schedules", force: :cascade do |t|
+    t.integer "yado_id"
     t.integer "reservation_id"
     t.string "schedule_type"
     t.text "note"
@@ -67,13 +68,17 @@ ActiveRecord::Schema.define(version: 20180308020030) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["started_on"], name: "index_schedules_on_started_on"
+    t.index ["yado_id"], name: "index_schedules_on_yado_id"
   end
 
   create_table "yados", force: :cascade do |t|
     t.string "name"
     t.string "short_name"
+    t.string "url"
+    t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_yados_on_name", unique: true
   end
 
 end

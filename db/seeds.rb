@@ -8,4 +8,4 @@
 
 
 yado = Yado.find_or_create_by(short_name: 'os')
-yado.update_attributes({name: 'omishima-space'})
+yado.update_attributes({name: 'omishima-space', url: 'https://omishima-space.com'})
