@@ -5,7 +5,7 @@ class Api::V1::YadosController < Api::BaseController
   end
 
   def show
-    @yado = Yado.find(params[:id])
+    @yado = Yado.friendly.find(params[:id])
     render json: @yado
   end
 end

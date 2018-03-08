@@ -24,7 +24,7 @@ class Api::V1::ReservationsController < Api::BaseController
   private
 
   def set_yado
-    @yado = Yado.find(params[:yado_id])
+    @yado = Yado.friendly.find(params[:yado_id])
   end
 
   def reservation_params

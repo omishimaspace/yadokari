@@ -40,6 +40,10 @@ gem 'twitter-bootstrap-rails'
 
 gem 'aasm'
 gem 'enum_help'
+gem 'ransack'
+gem 'kaminari'
+gem 'friendly_id', '~> 5.1.0'
+
 gem 'letter_opener_web', '~> 1.0'
 
 group :development, :test do

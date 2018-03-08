@@ -6,6 +6,12 @@ class Schedule < ApplicationRecord
 
   scope :future, -> {where('finished_on >= ?', Date.current)}
 
+
+
+  def self.exists?(check_in_on, check_out_on)
+    where('started_on >= ? and finished_on <= ?', check_in_on, check_out_on).exists?
+  end
+
   def to_cal
     {started_on: self.started_on, finished_on: self.finished_on, schedule: self.schedule_type_i18n}
   end
