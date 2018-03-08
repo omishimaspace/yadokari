@@ -5,9 +5,13 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.reservation.subject
   #
-  def reservation(reservation)
+  def notice_reservation(reservation)
     @reservation = reservation
+    mail to: ENV['FROM_ADDRESS'], subject: "#{@reservation.name}様よりご予約がありました"
+  end
 
-    mail to: reservation.email, subject: 'オオミシマスペース仮予約受付'
+  def temporary_reservation(reservation)
+    @reservation = reservation
+    mail to: reservation.email, subject: 'オオミシマスペースの予約申込みありがとうございます'
   end
 end
