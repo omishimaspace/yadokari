@@ -27,6 +27,11 @@ class Reservation < ApplicationRecord
     end
   end
 
+  def yado_name
+    yado.try(:name)
+  end
+
+
   def approvable?
 
   end

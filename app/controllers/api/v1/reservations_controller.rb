@@ -4,7 +4,7 @@ class Api::V1::ReservationsController < Api::BaseController
   def show
     reservation = Reservation.find_by(token: params[:token])
     if reservation.present?
-      render json: reservation
+      render json: reservation.as_json(except: %i(token created_at updated_at room_id), methods: :yado_name)
     else
       render json: '', status: :not_found
     end
