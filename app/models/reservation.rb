@@ -31,7 +31,6 @@ class Reservation < ApplicationRecord
     yado.try(:name)
   end
 
-
   def approvable?
 
   end
