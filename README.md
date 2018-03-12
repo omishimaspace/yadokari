@@ -117,3 +117,6 @@ $ yadokari me e4ff7fe9-945f-4a7e-af0d-9f1a67726627
  'women_number': 3,
  'yado_id': 1}
 ```
+
+## License
+MIT
