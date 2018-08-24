@@ -1,6 +1,7 @@
 class Api::V1::SchedulesController < Api::BaseController
 
   require 'open-uri'
+
   def index
     schedules = []
     if ENV['ICAL_URL'].present?
@@ -9,8 +10,8 @@ class Api::V1::SchedulesController < Api::BaseController
       ics.close
 
       today = Date.today
-      schedules = cals.first.events.sort { |a, b| a.dtstart <=> b.dtstart }.select{|d| d.dtstart >= today }.map do |event|
-        "#{event.dtstart.strftime("%F")} #{event.summary}"
+      schedules = cals.first.events.sort {|a, b| a.dtstart <=> b.dtstart}.select {|d| d.dtstart >= today}.map do |event|
+        {started_on: event.dtstart.strftime("%F"), schedule: event.summary}
       end
     end
     render json: schedules
