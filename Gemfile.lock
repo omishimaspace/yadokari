@@ -100,6 +100,7 @@ GEM
       ruby_parser (~> 3.5)
     i18n (1.0.0)
       concurrent-ruby (~> 1.0)
+    icalendar (2.4.1)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -312,6 +313,7 @@ DEPENDENCIES
   factory_bot_rails
   friendly_id (~> 5.1.0)
   haml-rails
+  icalendar
   jbuilder (~> 2.5)
   kaminari
   less-rails
@@ -337,4 +339,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.1
+   1.16.4
