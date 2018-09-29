@@ -1,14 +1,4 @@
-= form_for @reservation, html: { class: "form form-horizontal reservation" } do |f|
-  .form-group
-    = f.label :yado_id, class: 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :yado_id, class: 'form-control', required: true
-    = f.error_span(:yado_id)
-  .form-group
-    = f.label :room_id, class: 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :room_id, class: 'form-control', required: true
-    = f.error_span(:room_id)
+= form_for [@yado, @reservation], html: { class: "form form-horizontal reservation" } do |f|
   .form-group
     = f.label :name, class: 'control-label col-lg-2'
     .col-lg-10
@@ -70,16 +60,6 @@
       = f.text_field :note, class: 'form-control', required: true
     = f.error_span(:note)
   .form-group
-    = f.label :status, class: 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :status, class: 'form-control', required: true
-    = f.error_span(:status)
-  .form-group
-    = f.label :token, class: 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :token, class: 'form-control', required: true
-    = f.error_span(:token)
-  .form-group
     .col-lg-offset-2.col-lg-10
       = f.submit nil,class: 'btn btn-primary'
-      = link_to t('.cancel', :default => t("helpers.links.cancel")), reservations_path, :class => 'btn btn-default'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), yado_reservations_path(@yado), :class => 'btn btn-default'

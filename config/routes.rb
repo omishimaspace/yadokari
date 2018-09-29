@@ -12,10 +12,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :reservations
-  resources :rooms
-  resources :yados
-  resources :schedules
+  resources :yados do
+    resources :reservations
+    resources :rooms
+    resources :yados
+    resources :schedules
+  end
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end

@@ -9,4 +9,10 @@ class ApplicationController < ActionController::Base
       user == ENV['BASIC_AUTH_USER'] && pass == ENV['BASIC_AUTH_PASSWORD']
     end
   end
+
+  private
+
+  def set_yado
+    @yado = Yado.friendly.find(params[:yado_id] || params[:id])
+  end
 end
