@@ -1,63 +1,63 @@
 = form_for [@yado, @reservation], html: { class: "form form-horizontal reservation" } do |f|
   .form-group
     = f.label :name, class: 'control-label col-lg-2'
-    .col-lg-10
+    .col-lg-4
       = f.text_field :name, class: 'form-control', required: true
     = f.error_span(:name)
   .form-group
     = f.label :email, class: 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :email, class: 'form-control', required: true
+    .col-lg-4
+      = f.email_field :email, class: 'form-control', required: true
     = f.error_span(:email)
   .form-group
     = f.label :tel, class: 'control-label col-lg-2'
-    .col-lg-10
+    .col-lg-4
       = f.text_field :tel, class: 'form-control', required: true
     = f.error_span(:tel)
   .form-group
     = f.label :check_in_on, class: 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :check_in_on, class: 'form-control', required: true
+    .col-lg-2
+      = f.date_field :check_in_on, class: 'form-control', required: true
     = f.error_span(:check_in_on)
   .form-group
     = f.label :check_out_on, class: 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :check_out_on, class: 'form-control', required: true
+    .col-lg-2
+      = f.date_field :check_out_on, class: 'form-control', required: true
     = f.error_span(:check_out_on)
   .form-group
     = f.label :check_in_time, class: 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :check_in_time, class: 'form-control', required: true
+    .col-lg-2
+      = f.time_field :check_in_time, class: 'form-control', required: true
     = f.error_span(:check_in_time)
   .form-group
     = f.label :men_number, class: 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :men_number, class: 'form-control', required: true
+    .col-lg-1
+      = f.number_field :men_number, class: 'form-control', required: true, max: 8
     = f.error_span(:men_number)
   .form-group
     = f.label :women_number, class: 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :women_number, class: 'form-control', required: true
+    .col-lg-1
+      = f.number_field :women_number, class: 'form-control', required: true
     = f.error_span(:women_number)
   .form-group
     = f.label :purpose_of_use, class: 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :purpose_of_use, class: 'form-control', required: true
+    .col-lg-8
+      = f.text_field :purpose_of_use, class: 'form-control'
     = f.error_span(:purpose_of_use)
   .form-group
     = f.label :payment_method, class: 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :payment_method, class: 'form-control', required: true
+    .col-lg-8
+      = f.select :payment_method, %w(カード 現地払い 前払い), class: 'form-control', required: true
     = f.error_span(:payment_method)
   .form-group
     = f.label :coupon, class: 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :coupon, class: 'form-control', required: true
+    .col-lg-3
+      = f.text_field :coupon, class: 'form-control'
     = f.error_span(:coupon)
   .form-group
     = f.label :note, class: 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :note, class: 'form-control', required: true
+    .col-lg-8
+      = f.text_area :note, class: 'form-control'
     = f.error_span(:note)
   .form-group
     .col-lg-offset-2.col-lg-10

@@ -3,7 +3,7 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 
   def index
-    @reservations = @yado.reservations.page(params[:page])
+    @reservations = @yado.reservations.page(params[:page]).order('check_in_on')
   end
 
   def show

@@ -2,7 +2,8 @@ class YadosController < ApplicationController
   before_action :set_yado, only: [:show, :edit, :update, :destroy]
 
   def index
-    @yados = Yado.all
+    redirect_to yado_path(Yado.find_by_short_name('os'))
+    # @yados = Yado.all
   end
 
   def show
